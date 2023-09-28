@@ -111,8 +111,8 @@ if SELECT == "Explore Data":
  # Create a scatter plot
  data1 = px.scatter(filtered_df, x="neighbourhood_group", y="neighbourhood", color="room_type")
  data1['layout'].update(title="Room_type in the Neighbourhood and Neighbourhood_Group wise data using Scatter Plot.",
-                        titlefont=dict(size=20), xaxis=dict(title="Neighbourhood_Group", titlefont=dict(size=20)),
-                        yaxis=dict(title="Neighbourhood", titlefont=dict(size=20)))
+                        titlefont=dict(size=18), xaxis=dict(title="Neighbourhood_Group", titlefont=dict(size=18)),
+                        yaxis=dict(title="Neighbourhood", titlefont=dict(size=18)))
  st.plotly_chart(data1, use_container_width=True)
 
  with st.expander("Detailed Room Availability and Price View Data in the Neighbourhood"):
@@ -127,7 +127,7 @@ if SELECT == "Explore Data":
  st.subheader(":point_right: Neighbourhood_group wise Room_type and Minimum stay nights")
  with st.expander("Summary_Table"):
     df_sample = df[0:5][["neighbourhood_group", "neighbourhood", "reviews_per_month", "room_type", "price", "minimum_nights", "host_name"]]
-    fig = ff.create_table(df_sample, colorscale="Cividis")
+    fig = ff.create_table(df_sample, colorscale="Viridis")
     st.plotly_chart(fig, use_container_width=True)
 
  # map function for room_type
